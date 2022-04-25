@@ -101,9 +101,10 @@ H5P.Chart = (function ($, EventDispatcher) {
   Chart.prototype.attach = function ($container) {
     var self = this;
 
+    // Mark as consumed
+    self.triggerConsumed();
+
     if(self.isRoot()) {
-      // Mark as consumed
-      self.triggerConsumed();
       // Mark as completed
       self.triggerCompleted();
     }
